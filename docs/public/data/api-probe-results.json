@@ -1,0 +1,1190 @@
+[
+  [
+    "/api/approval/handover/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/approval/template/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=51 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/attendance/appeal/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/attendance/makeup/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/attendance/record/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=18 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/attendance/shift/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/bid/competitor/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/bid/deposit/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/bid/document/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/bid/opening/list",
+    200,
+    200,
+    "list len 5"
+  ],
+  [
+    "/api/bid/prequalification/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/bid/registration/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=5 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/bid/result/options",
+    200,
+    200,
+    "list len 4"
+  ],
+  [
+    "/api/bid/result/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=7 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/bid/result/summary",
+    200,
+    200,
+    "total=6 keys=['total', 'lose', 'winRate', 'win']"
+  ],
+  [
+    "/api/bid/task/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/bid/task/summary",
+    200,
+    200,
+    "total=0 keys=['total', 'approved', 'pendingReceive', 'submitted']"
+  ],
+  [
+    "/api/bid/tender-doc/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/bid/tender/options",
+    200,
+    200,
+    "list len 1054"
+  ],
+  [
+    "/api/bid/tender/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1054 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/bid/win-stats/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=6 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/bid/win-stats/summary",
+    200,
+    200,
+    "total=dict keys=['winCount', 'bidCount', 'winRate']"
+  ],
+  [
+    "/api/cert/annual-fee/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/cert/deposit-fee/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/cert/deposit-fee/summary",
+    200,
+    200,
+    "total=dict keys=['lockCount', 'totalFee', 'monthFee']"
+  ],
+  [
+    "/api/cert/enterprise/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=6 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/cert/gap/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=5 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/cert/personnel/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=27 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/cert/relation/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/cert/reminder/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=19 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/cert/reminder/summary",
+    200,
+    200,
+    "total=dict keys=['oneMonth', 'sixMonth', 'expired', 'threeMonth']"
+  ],
+  [
+    "/api/cert/usage/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/cockpit/summary",
+    200,
+    200,
+    "list len 8"
+  ],
+  [
+    "/api/collab/task/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/contract-template/list",
+    200,
+    200,
+    "list len 1"
+  ],
+  [
+    "/api/contract/archive/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=2 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/contract/options",
+    200,
+    200,
+    "list len 7"
+  ],
+  [
+    "/api/contract/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=9 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/contract/payment-plan/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/contract/perf-guarantee/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/contract/reminder/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=8 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/contract/reminder/summary",
+    200,
+    200,
+    "total=8 keys=['total', 'renewal', 'expire', 'payment']"
+  ],
+  [
+    "/api/contract/risk/list",
+    200,
+    200,
+    "list len 4"
+  ],
+  [
+    "/api/contract/risk/summary",
+    200,
+    200,
+    "total=4 keys=['total', 'high', 'low', 'mid']"
+  ],
+  [
+    "/api/dict/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=13 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/employee-transfer/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/employee/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=2 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/equipment/depreciation/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=6 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/equipment/depreciation/summary",
+    200,
+    200,
+    "total=dict keys=['netValue', 'originalValue', 'accumulatedDepreciation']"
+  ],
+  [
+    "/api/equipment/lease/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/equipment/maintenance/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=5 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/equipment/maintenance/summary",
+    200,
+    200,
+    "total=5 keys=['total', 'overdue', 'pending', 'done']"
+  ],
+  [
+    "/api/equipment/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=7 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/equipment/repair/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/equipment/transfer/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/equipment/usage/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/finance/ar-ap/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=6 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/finance/ar-ap/summary",
+    200,
+    200,
+    "total=dict keys=['payable', 'overdue', 'receivable']"
+  ],
+  [
+    "/api/finance/bank-flow/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=14 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/finance/bank-flow/summary",
+    200,
+    200,
+    "total=dict keys=['income', 'balance', 'expense']"
+  ],
+  [
+    "/api/finance/expense/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=13 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/finance/income/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=6 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/finance/invoice/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=7 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/finance/invoice/stats",
+    200,
+    200,
+    "total=dict keys=['totalTax', 'totalAmount', 'byMonth', 'count']"
+  ],
+  [
+    "/api/finance/invoice/summary",
+    200,
+    200,
+    "total=dict keys=['outputTax', 'pending', 'inputTax']"
+  ],
+  [
+    "/api/finance/payment-request/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=5 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/finance/payment-request/summary",
+    200,
+    200,
+    "total=5 keys=['total', 'rejected', 'pending', 'paid']"
+  ],
+  [
+    "/api/finance/receipt/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=5 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/finance/tax-rate/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=16 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/hr/recruit/candidate/options",
+    200,
+    200,
+    "list len 0"
+  ],
+  [
+    "/api/hr/recruit/candidate/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/hr/recruit/interview/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/hr/recruit/post/options",
+    200,
+    200,
+    "list len 0"
+  ],
+  [
+    "/api/hr/recruit/post/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/kb/access-request/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/kb/doc/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/kb/entity/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=10 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/kb/push-rule/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=6 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/kb/qa/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/kb/relation/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/kb/stats",
+    200,
+    200,
+    "total=dict keys=['gapAnalysis', 'monthActiveUsers', 'totalDownloads', 'totalFavorites']"
+  ],
+  [
+    "/api/kb/taxonomy/tree",
+    200,
+    200,
+    "list len 8"
+  ],
+  [
+    "/api/labor-contract/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/labor/attendance/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/labor/contract/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/labor/crew/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/labor/payroll/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/labor/payroll/summary",
+    200,
+    200,
+    "total=dict keys=['totalGross', 'pending', 'paid', 'totalNet']"
+  ],
+  [
+    "/api/labor/settlement/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/labor/subcontract/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/labor/worker/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/leave/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=5 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/loan/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/log/login/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=626 keys=['records', 'pages', 'total', 'current']"
+  ],
+  [
+    "/api/log/operation/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1036 keys=['records', 'pages', 'total', 'current']"
+  ],
+  [
+    "/api/material/inventory/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=7 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/material/inventory/summary",
+    200,
+    200,
+    "total=7 keys=['over', 'normal', 'total', 'low']"
+  ],
+  [
+    "/api/material/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=6 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/material/purchase-order/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=5 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/material/purchase-plan/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=5 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/material/stock-in/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/material/stock-out/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/material/stocktake/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/material/supplier/options",
+    200,
+    200,
+    "list len 5"
+  ],
+  [
+    "/api/material/supplier/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=6 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/material/transfer/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/material/warehouse/options",
+    200,
+    200,
+    "list len 4"
+  ],
+  [
+    "/api/material/warehouse/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/menu/all",
+    200,
+    200,
+    "list len 355"
+  ],
+  [
+    "/api/oa/asset/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/asset/stocktake/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/asset/transfer/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/doc/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=2 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/doc/summary",
+    200,
+    200,
+    "total=2 keys=['archived', 'total', 'draft', 'published']"
+  ],
+  [
+    "/api/oa/logistics/canteen/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/logistics/repair/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/meeting/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/meeting/room/options",
+    200,
+    200,
+    "list len 1"
+  ],
+  [
+    "/api/oa/meeting/room/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/redhead-template/list",
+    200,
+    200,
+    "list len 1"
+  ],
+  [
+    "/api/oa/reward/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/supply/in/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/supply/options",
+    200,
+    200,
+    "list len 1"
+  ],
+  [
+    "/api/oa/supply/out/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/supply/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/supply/purchase/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/supply/stocktake/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/vehicle/cost/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/vehicle/maintain/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/vehicle/oil/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/oa/vehicle/options",
+    200,
+    200,
+    "list len 1"
+  ],
+  [
+    "/api/oa/vehicle/use/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/ocr/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/ocr/summary",
+    200,
+    200,
+    "total=1 keys=['total', 'pending', 'stored', 'failed']"
+  ],
+  [
+    "/api/org/options",
+    200,
+    200,
+    "list len 24"
+  ],
+  [
+    "/api/org/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=24 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/org/post/all",
+    200,
+    200,
+    "list len 19"
+  ],
+  [
+    "/api/org/post/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=19 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/org/tree",
+    200,
+    200,
+    "list len 1"
+  ],
+  [
+    "/api/overtime/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/performance/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/performance/template/list",
+    200,
+    200,
+    "list len 0"
+  ],
+  [
+    "/api/project/accident/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/budget/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=6 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/budget/summary",
+    200,
+    200,
+    "total=70020000.0 keys=['actual', 'total', 'remain']"
+  ],
+  [
+    "/api/project/change-visa/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/change-visa/summary",
+    200,
+    200,
+    "total=dict keys=['netAmount', 'count', 'negativeAmount', 'positiveAmount']"
+  ],
+  [
+    "/api/project/completion/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=36 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/cost-budget/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=5 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/cost/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=14 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/cost/summary",
+    200,
+    200,
+    "total=dict keys=['budgetAmount', 'remain', 'actualAmount']"
+  ],
+  [
+    "/api/project/cost/warning/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/cost/warning/summary",
+    200,
+    200,
+    "total=0 keys=['totalActual', 'total', 'yellowCount', 'overAmount']"
+  ],
+  [
+    "/api/project/danger-source/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/education/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/file/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=6 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/gantt/list",
+    200,
+    200,
+    "list len 8"
+  ],
+  [
+    "/api/project/media/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/milestone/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=7 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/options",
+    200,
+    200,
+    "list len 7"
+  ],
+  [
+    "/api/project/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=7 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/progress-compare/list",
+    200,
+    200,
+    "list len 8"
+  ],
+  [
+    "/api/project/progress/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=5 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/quality-plan/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/quality-rectify/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/quality-report/summary",
+    200,
+    200,
+    "total=dict keys=['rectifyCount', 'checkCount', 'passRate', 'openRectifyCount']"
+  ],
+  [
+    "/api/project/quality/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=6 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/report/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/safety-check/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/safety-goal/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/safety-rectify/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=2 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/safety-report/summary",
+    200,
+    200,
+    "total=dict keys=['rectifyRate', 'hazardCount', 'educationCount', 'checkCount']"
+  ],
+  [
+    "/api/project/stage/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=8 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/summary",
+    200,
+    200,
+    "total=7 keys=['total', 'amount', 'finished', 'building']"
+  ],
+  [
+    "/api/project/team/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=9 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/warranty/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/project/warranty/summary",
+    200,
+    200,
+    "total=0 keys=['pendingAccept', 'unresolved', 'total', 'fixing']"
+  ],
+  [
+    "/api/reimburse/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/report/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=0 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/role/all",
+    200,
+    200,
+    "list len 30"
+  ],
+  [
+    "/api/role/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=30 keys=['records', 'pages', 'total', 'current']"
+  ],
+  [
+    "/api/salary/profile/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=4 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/salary/record/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=2 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/salary/social/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/seal/alert/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=5 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/seal/apply/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=6 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/seal/audit/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=10 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/seal/device/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=5 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/seal/device/summary",
+    200,
+    200,
+    "total=5 keys=['total', 'online', 'offline', 'abnormal']"
+  ],
+  [
+    "/api/seal/device/transfer/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/seal/ledger/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=3 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/seal/ledger/summary",
+    200,
+    200,
+    "total=dict keys=['sealCount', 'totalUse', 'totalFile']"
+  ],
+  [
+    "/api/seal/record/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=5 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/training/plan/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/training/record/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/trip/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=1 keys=['records', 'total', 'size', 'current']"
+  ],
+  [
+    "/api/user/options",
+    200,
+    200,
+    "list len 21"
+  ],
+  [
+    "/api/user/page?pageNum=1&pageSize=3",
+    200,
+    200,
+    "total=21 keys=['records', 'pages', 'total', 'current']"
+  ]
+]
