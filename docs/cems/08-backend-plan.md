@@ -144,7 +144,7 @@ NestJS + PostgreSQL（v1.0 计划案）。代价：API 行为需逐个对齐 Spr
 - `PageResult.java`：`{records, total, pageNum, pageSize}`
 - 全局异常：`@RestControllerAdvice` → 业务异常转 `code:500` 信封；Spring 原生 403 保持原格式（前端已兼容）
 - JWT：`jjwt`，accessToken 2h + refreshToken 7d；`SecurityFilterChain` 放行 `/api/auth/login`
-- 跨域：开发环境允许 `http://<服务器IP>:5173`
+- 跨域：开发环境允许 `http://134.175.44.110:5173`
 - Flyway：`db/migration/V1__init.sql`
 
 **交付**：`mvn spring-boot:run` 启动，437 路径全部 501，Swagger 可见。
@@ -293,7 +293,7 @@ sys_file(id, original_name, oss_key, size, mime, create_by, create_time)
 ## 7. 部署规范
 
 ```
-<服务器IP>
+134.175.44.110
 ├── :5173  cems-replica（前端静态，server.cjs）
 ├── :8080  cems-backend（Spring Boot，systemd 服务）
 ├── :3306  MySQL 8.0（docker 或原生）
@@ -343,4 +343,4 @@ sys_file(id, original_name, oss_key, size, mime, create_by, create_time)
 1. **技术栈终定**：Spring Boot（对标原站，推荐）vs NestJS（团队 JS 熟）——你拍板
 2. **数据库**：MySQL 8.0（推荐）vs PostgreSQL
 3. **启动范围**：Phase 0+1 先行（1 周交付登录可用），还是全量开工？
-4. **服务器**：MySQL/PG 装 <服务器IP> 上，还是独立数据盘/机器？
+4. **服务器**：MySQL/PG 装 134.175.44.110 上，还是独立数据盘/机器？
