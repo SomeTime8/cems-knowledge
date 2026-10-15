@@ -1,0 +1,544 @@
+[
+ {
+  "endpoint": "/api/approval/tasks/pending?pageNum=1&pageSize=1",
+  "code": 200,
+  "list_len": 1
+ },
+ {
+  "endpoint": "/api/approval/template/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 52,
+  "sample_keys": [
+   "bizType",
+   "createTime",
+   "id",
+   "name",
+   "nodes",
+   "nodesJson",
+   "status",
+   "updateTime"
+  ]
+ },
+ {
+  "endpoint": "/api/role/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 30,
+  "sample_keys": [
+   "createTime",
+   "dataScope",
+   "description",
+   "id",
+   "inheritPerms",
+   "isDeleted",
+   "roleCode",
+   "roleName",
+   "sortOrder",
+   "status"
+  ]
+ },
+ {
+  "endpoint": "/api/user/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 21,
+  "sample_keys": [
+   "createTime",
+   "id",
+   "isDeleted",
+   "realName",
+   "roleNames",
+   "status",
+   "updateTime",
+   "username"
+  ]
+ },
+ {
+  "endpoint": "/api/employee/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 2,
+  "sample_keys": [
+   "accountStatus",
+   "approvalStatus",
+   "bankCard",
+   "createTime",
+   "currentAddr",
+   "education",
+   "employeeNo",
+   "employeeType",
+   "entryDate",
+   "gender"
+  ]
+ },
+ {
+  "endpoint": "/api/attendance/record/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 18,
+  "sample_keys": [
+   "checkDate",
+   "checkInGps",
+   "checkInMethod",
+   "checkInTime",
+   "checkOutGps",
+   "checkOutMethod",
+   "checkOutTime",
+   "createTime",
+   "employeeId",
+   "id"
+  ]
+ },
+ {
+  "endpoint": "/api/cert/personnel/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 27,
+  "sample_keys": [
+   "archiveNo",
+   "auditStatus",
+   "birthDate",
+   "certCategory",
+   "certNo",
+   "continueEduDate",
+   "createTime",
+   "expireDate",
+   "gender",
+   "id"
+  ]
+ },
+ {
+  "endpoint": "/api/cert/enterprise/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 6,
+  "sample_keys": [
+   "attachName",
+   "certCategory",
+   "certLevel",
+   "certNo",
+   "certType",
+   "createTime",
+   "expireDate",
+   "id",
+   "isDeleted",
+   "issueDate"
+  ]
+ },
+ {
+  "endpoint": "/api/cert/reminder/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 19,
+  "sample_keys": [
+   "certType",
+   "daysLeft",
+   "expireDate",
+   "name",
+   "remindLevel"
+  ]
+ },
+ {
+  "endpoint": "/api/bid/tender/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 1054,
+  "sample_keys": [
+   "createTime",
+   "id",
+   "isDeleted",
+   "name",
+   "publishDate",
+   "region",
+   "sourceSite",
+   "sourceUrl",
+   "status",
+   "updateTime"
+  ]
+ },
+ {
+  "endpoint": "/api/bid/result/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 7,
+  "sample_keys": [
+   "bidAmount",
+   "bidName",
+   "contractStatus",
+   "converted",
+   "createTime",
+   "id",
+   "isDeleted",
+   "loseReason",
+   "remark",
+   "result"
+  ]
+ },
+ {
+  "endpoint": "/api/contract/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 9,
+  "sample_keys": [
+   "amount",
+   "approvalStatus",
+   "attachments",
+   "code",
+   "createTime",
+   "id",
+   "isDeleted",
+   "name",
+   "partyB",
+   "projectId"
+  ]
+ },
+ {
+  "endpoint": "/api/project/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 7,
+  "sample_keys": [
+   "code",
+   "contractAmount",
+   "contractId",
+   "contractName",
+   "createTime",
+   "deputyManager",
+   "deputyManagerId",
+   "endDate",
+   "id",
+   "isDeleted"
+  ]
+ },
+ {
+  "endpoint": "/api/finance/income/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 6,
+  "sample_keys": [
+   "amount",
+   "category",
+   "code",
+   "contractId",
+   "contractName",
+   "createTime",
+   "customer",
+   "id",
+   "incomeDate",
+   "isDeleted"
+  ]
+ },
+ {
+  "endpoint": "/api/finance/expense/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 13,
+  "sample_keys": [
+   "amount",
+   "category",
+   "code",
+   "createTime",
+   "expenseDate",
+   "id",
+   "isDeleted",
+   "payee",
+   "remark",
+   "sourceId"
+  ]
+ },
+ {
+  "endpoint": "/api/finance/invoice/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 7,
+  "sample_keys": [
+   "amount",
+   "createTime",
+   "direction",
+   "id",
+   "invoiceDate",
+   "invoiceNo",
+   "isDeleted",
+   "party",
+   "projectId",
+   "projectName"
+  ]
+ },
+ {
+  "endpoint": "/api/finance/bank-flow/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 14,
+  "sample_keys": [
+   "accountName",
+   "accountNo",
+   "amount",
+   "balance",
+   "counterparty",
+   "createTime",
+   "id",
+   "isDeleted",
+   "matchedContract",
+   "matchedProject"
+  ]
+ },
+ {
+  "endpoint": "/api/material/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 6,
+  "sample_keys": [
+   "category",
+   "code",
+   "id",
+   "isDeleted",
+   "name",
+   "price",
+   "remark",
+   "safetyStock",
+   "spec",
+   "unit"
+  ]
+ },
+ {
+  "endpoint": "/api/material/supplier/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 6,
+  "sample_keys": [
+   "category",
+   "code",
+   "contact",
+   "cooperateAmount",
+   "cooperateCount",
+   "cooperateYears",
+   "id",
+   "isDeleted",
+   "level",
+   "name"
+  ]
+ },
+ {
+  "endpoint": "/api/material/inventory/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 7,
+  "sample_keys": [
+   "id",
+   "isDeleted",
+   "materialName",
+   "maxStock",
+   "quantity",
+   "safetyStock",
+   "spec",
+   "status",
+   "unit",
+   "warehouse"
+  ]
+ },
+ {
+  "endpoint": "/api/equipment/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 7,
+  "sample_keys": [
+   "category",
+   "code",
+   "department",
+   "id",
+   "isDeleted",
+   "location",
+   "model",
+   "name",
+   "projectName",
+   "purchaseDate"
+  ]
+ },
+ {
+  "endpoint": "/api/labor/crew/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 1,
+  "sample_keys": [
+   "code",
+   "createTime",
+   "id",
+   "isDeleted",
+   "leader",
+   "memberCount",
+   "name",
+   "phone",
+   "projectId",
+   "projectName"
+  ]
+ },
+ {
+  "endpoint": "/api/labor/worker/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 1,
+  "sample_keys": [
+   "createTime",
+   "crewName",
+   "dailyWage",
+   "gender",
+   "id",
+   "idCard",
+   "isDeleted",
+   "name",
+   "phone",
+   "projectId"
+  ]
+ },
+ {
+  "endpoint": "/api/seal/apply/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 6,
+  "sample_keys": [
+   "applicant",
+   "applyType",
+   "authMode",
+   "authTime",
+   "authValue",
+   "closeReason",
+   "code",
+   "copies",
+   "createTime",
+   "dept"
+  ]
+ },
+ {
+  "endpoint": "/api/seal/ledger/summary",
+  "code": 200,
+  "data_keys": [
+   "sealCount",
+   "totalFile",
+   "totalUse"
+  ]
+ },
+ {
+  "endpoint": "/api/kb/doc/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 4,
+  "sample_keys": [
+   "author",
+   "category",
+   "createTime",
+   "dept",
+   "downloads",
+   "favorited",
+   "favorites",
+   "fileSize",
+   "fileType",
+   "id"
+  ]
+ },
+ {
+  "endpoint": "/api/message/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 2301,
+  "sample_keys": [
+   "channel",
+   "content",
+   "createTime",
+   "id",
+   "isDeleted",
+   "read",
+   "sender",
+   "time",
+   "title",
+   "type"
+  ]
+ },
+ {
+  "endpoint": "/api/message/unread-count",
+  "code": 200
+ },
+ {
+  "endpoint": "/api/oa/doc/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 2,
+  "sample_keys": [
+   "attachName",
+   "attachPath",
+   "author",
+   "ccDept",
+   "content",
+   "createTime",
+   "docNo",
+   "docType",
+   "flowHandlers",
+   "flowStep"
+  ]
+ },
+ {
+  "endpoint": "/api/oa/meeting/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 0
+ },
+ {
+  "endpoint": "/api/system/backup/page?pageNum=1&pageSize=5",
+  "code": 200,
+  "total": 2,
+  "sample_keys": [
+   "createTime",
+   "fileName",
+   "filePath",
+   "id",
+   "isDeleted",
+   "name",
+   "operator",
+   "size",
+   "status",
+   "type"
+  ]
+ },
+ {
+  "endpoint": "/api/cockpit/summary",
+  "code": 200,
+  "list_len": 8
+ },
+ {
+  "endpoint": "/api/log/login/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 657,
+  "sample_keys": [
+   "createTime",
+   "id",
+   "ip",
+   "result",
+   "userAgent",
+   "userId",
+   "username"
+  ]
+ },
+ {
+  "endpoint": "/api/log/operation/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 1038,
+  "sample_keys": [
+   "action",
+   "content",
+   "createTime",
+   "id",
+   "ip",
+   "module",
+   "targetId",
+   "targetType",
+   "userId",
+   "userName"
+  ]
+ },
+ {
+  "endpoint": "/api/project/completion/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 36,
+  "sample_keys": [
+   "amount",
+   "applyPerson",
+   "applyReport",
+   "archiveCount",
+   "archivePerson",
+   "createTime",
+   "dataFile",
+   "drawingFile",
+   "engineer",
+   "id"
+  ]
+ },
+ {
+  "endpoint": "/api/project/cost/page?pageNum=1&pageSize=1",
+  "code": 200,
+  "total": 14,
+  "sample_keys": [
+   "actualAmount",
+   "budgetAmount",
+   "category",
+   "createTime",
+   "id",
+   "isDeleted",
+   "month",
+   "projectId",
+   "updateTime"
+  ]
+ }
+]
