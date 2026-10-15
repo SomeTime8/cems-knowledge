@@ -22,7 +22,8 @@ export default defineConfig({
           { text: '04 数据量与数据质量', link: '/cems/04-data-quality' },
           { text: '05 问题清单与风险', link: '/cems/05-issues-and-risks' },
           { text: '06 优化建议', link: '/cems/06-optimization' },
-          { text: '07 访问方式', link: '/cems/07-access-method' }
+          { text: '07 访问方式', link: '/cems/07-access-method' },
+          { text: '08 后端复刻实施方案', link: '/cems/08-backend-plan' }
         ]
       }
     ],
