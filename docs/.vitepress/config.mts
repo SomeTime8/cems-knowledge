@@ -24,7 +24,8 @@ export default defineConfig({
           { text: '06 优化建议', link: '/cems/06-optimization' },
           { text: '07 访问方式', link: '/cems/07-access-method' },
           { text: '08 后端复刻实施方案', link: '/cems/08-backend-plan' },
-          { text: '09 业务分析与行业对标', link: '/cems/09-business-analysis' }
+          { text: '09 业务分析与行业对标', link: '/cems/09-business-analysis' },
+          { text: '10 表单字段级业务分析', link: '/cems/10-form-field-analysis' }
         ]
       }
     ],
