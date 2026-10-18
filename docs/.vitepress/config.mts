@@ -25,7 +25,8 @@ export default defineConfig({
           { text: '07 访问方式', link: '/cems/07-access-method' },
           { text: '08 后端复刻实施方案', link: '/cems/08-backend-plan' },
           { text: '09 业务分析与行业对标', link: '/cems/09-business-analysis' },
-          { text: '10 表单字段级业务分析', link: '/cems/10-form-field-analysis' }
+          { text: '10 表单字段级业务分析', link: '/cems/10-form-field-analysis' },
+          { text: '11 BPMN 入门（外部资料）', link: '/cems/11-bpmn-primer' }
         ]
       }
     ],
