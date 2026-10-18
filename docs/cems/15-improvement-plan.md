@@ -1,6 +1,6 @@
 # 15 - 开源功能借鉴与开发改进计划
 
-> 从 RuoYi、JeecgBoot、JimuReport、Flowable、KKFileView、EasyExcel、MinIO、MaxKey、Elasticsearch、ThingsBoard、DataX、Sa-Token 等开源项目提取 20 个经生产验证的功能模式，分 5 个阶段落地到 CEMS。2026-10-19（首批 10 个，2026-10-19 晚增补第二批 10 个）。
+> 从 RuoYi、JeecgBoot、JimuReport、Flowable、KKFileView、EasyExcel、MinIO、MaxKey、Elasticsearch、ThingsBoard、DataX、Sa-Token、Jenkins、SonarQube、Prometheus、Ansible、Apifox、影刀RPA、Selenium、XtraBackup、JMeter 等开源项目提取 30 个经生产验证的功能模式，分 6 个阶段落地到 CEMS。2026-10-19（首批 10 个功能，同日晚增补第二批 10 个，次日凌晨增补第三批 10 个自动化专项）。
 
 ## 1. 背景与目标
 
@@ -18,6 +18,16 @@
 | 集成：账号割裂、外部数据手工同步 | MaxKey SSO、DataX 数据同步 | MaxKey、阿里 DataX |
 | 认证：JWT 手写散装 | Sa-Token 轻量认证 | Sa-Token |
 | 终端：只有 PC 端 | uni-app 移动端（H5/App/小程序） | uni-app |
+| 交付：手工 rsync 部署，曾白屏 | CI/CD 自动化流水线 | Jenkins / GitHub Actions |
+| 质量：代码无人把关 | SonarQube 质量门禁 | SonarQube |
+| 运维：多机手工 SSH | Ansible 批量运维 | Ansible |
+| 接口：718 API 无文档无测试 | Apifox 自动化测试 | Apifox |
+| 测试：199 页靠人工回归 | Selenium UI 自动化 | Selenium |
+| 性能：从未压测 | JMeter 压测自动化 | Apache JMeter |
+| 监控：可观测性为零 | Prometheus+Grafana 告警 | Prometheus / Grafana |
+| 日志：散落各机器 | Loki/EFK 日志集中 | Loki |
+| 备份：手工触发无演练 | XtraBackup 自动备份 | Percona XtraBackup |
+| 重复劳动：发票/报表手工 | RPA 办公自动化 | 影刀 RPA |
 
 **原则**：不重复造轮子，能集成的不自研；P0 先行，体验随后；每阶段可独立交付验收。
 
@@ -123,25 +133,94 @@
 - **CEMS 缺口**：只有 PC 端，工地现场的考勤、报验、巡检只能回办公室补录。
 - **落地**：先做 H5 轻量版（审批待办、考勤打卡、消息中心三个高频场景），uni-app 一套代码，后期再套壳发 App/小程序。
 
+### F21 CI/CD 自动化流水线（Jenkins / GitHub Actions）
+- **出处**：Jenkins "开源自动化服务器，1800+ 插件"；GitHub Actions "GitHub 原生 CI/CD，push 即自动跑构建测试部署，无需维护服务器"。
+- **CEMS 缺口**：靠 rsync 手工部署，2026-10-16 白屏事故根因就是"新旧文件混装 20 分钟"；cems-deploy.sh 写了但没进流水线。
+- **落地**：GitHub 私有仓库 cems-replica 配 Actions：push → lint+typecheck+build → staging 部署 → 冒烟 → 人工确认 → 生产切换（复用 cems-deploy.sh 的 staging 切换逻辑）。
+
+### F22 代码质量门禁（SonarQube）
+- **出处**：SonarQube Quality Gate "定义一组合格条件（新增代码 Bug 为零、覆盖率 80%、重复率 <3%），不满足流水线直接失败"；Docker 一行命令启动。
+- **CEMS 缺口**：199 个视图手写，代码质量靠人眼，cloneDeep 那种坑全靠事后救火。
+- **落地**：进 CI 流水线，增量代码门禁（存量不阻塞），先开 Bug+漏洞两条规则。
+
+### F23 监控告警自动化（Prometheus + Grafana）
+- **出处**：两者常配对，"Prometheus 采集存储指标，Grafana 查询可视化告警"；Grafana 官方确认 Prometheus 为开源监控系统+时序数据库。
+- **CEMS 缺口**：06 原话"可观测性为零"——原站 502/500 间歇，出事了都不知道。
+- **落地**：Prometheus 采集 Spring Boot Actuator 指标 + Node Exporter；Grafana 大盘 + 告警规则（接口 P99 耗时、错误率、磁盘），告警推企微/邮件。
+
+### F24 批量运维自动化（Ansible）
+- **出处**：Ansible "开源自动化平台，集配置管理、应用部署、任务执行于一体，使用 SSH 通信，目标服务器无需装代理"；"批量执行命令、配置管理、应用部署"三大核心能力。
+- **CEMS 缺口**：多台服务器（应用+数据库+MinIO+ES）的部署、配置更新全靠手工 SSH 一台台敲。
+- **落地**：写 Playbook 管理服务器：部署应用、更新配置、重启服务一条命令；新机器加入改 Inventory 即可。
+
+### F25 API 自动化测试（Apifox）
+- **出处**：Apifox "API 文档、调试、Mock、自动化测试一体化，Postman + Swagger + Mock + JMeter 定位"，"定义好接口文档，调试、Mock、测试直接用，无需重复定义"。
+- **CEMS 缺口**：718 个 API（原站）/ 437 个接口（复刻规划），无统一文档，联调靠口头，前后端经常对不上。
+- **落地**：08 后端接口先在 Apifox 建文档 → 自动生成 Mock 给前端 → 测试用例沉淀为回归集 → 接入 CI 每晚自动跑。
+
+### F26 RPA 办公自动化（影刀）
+- **出处**：影刀 RPA "模拟人的鼠标点击、键盘输入、读取信息等操作，自动处理大量重复、有逻辑规则的工作"，服务"超 3 万家企业"。
+- **CEMS 缺口**：发票录入、银行流水对账、报表填报这些重复劳动全靠人工；OCR 接入前全是手工录。
+- **落地**：先试点 2 个场景：发票信息自动录入（OCR 结果 → 表单填充）、日报表自动生成推送（多系统取数 → Excel → 邮件）。
+
+### F27 UI 回归测试自动化（Selenium）
+- **出处**：Selenium "广泛使用的 Web 应用自动化测试工具"，WebDriver 驱动真浏览器，Grid 多浏览器并行，"可与 Jenkins 等持续集成工具集成"。
+- **CEMS 缺口**：199 个页面，之前逐页复查靠人工截图看；每次发版回归全靠人点一遍。
+- **落地**：核心 20 个页面（登录、项目列表、合同审批、薪资核算等）录 Selenium IDE 脚本 → Grid 并行跑 → 接入 CI 每晚回归。
+
+### F28 数据库自动备份（XtraBackup）
+- **出处**：Percona XtraBackup "开源热备工具，拷贝 InnoDB 文件不停 MySQL"，增量备份"只拷贝变更页"；"靠 cron 定时触发，凌晨低峰自动执行，无需人工干预"。
+- **CEMS 缺口**：06 P0 的备份 Mock 虽已修成真备份，但仍是手工触发，无定时、无异地、无恢复演练。
+- **落地**：cron 每周日全量 + 每日增量 → 备份文件同步到 MinIO（异地）→ 每月一次恢复演练 → 失败告警。
+
+### F29 日志集中自动化（Loki / EFK）
+- **出处**：可观测性实施路线图第一阶段即"Loki 或 EFK 实现日志集中收集"；ES 本身为海量日志分析而生（ELK 组合）。
+- **CEMS 缺口**：06 要求"错误日志集中"，现在各服务日志散落在各台机器。
+- **落地**：Loki（轻量，比 ELK 省资源）收集 Spring Boot + Nginx 日志 → Grafana 统一查 → 错误率告警；前端异常上报接口 → Loki。
+
+### F30 性能压测自动化（JMeter）
+- **出处**：Apache JMeter "开源纯 Java 应用，测性能和负载"，支持"CLI 命令行模式无头运行"，多线程并发采样。
+- **CEMS 缺口**：上线前从没压测过，并发能力未知；原站就间歇 502/500，复刻后端不能重蹈。
+- **落地**：08 后端每个 Phase 结束跑一轮 JMeter（登录、列表查询、审批提交三个核心场景），压测脚本入仓库，CI 定时跑，性能退化自动告警。
+
 ## 3. 实施路线图
 
 | 阶段 | 主题 | 功能 | 周期 | 前置依赖 | 优先级 |
 |------|------|------|------|----------|--------|
-| Phase 1 | P0 安全与断环+地基 | F2 数据权限、F3 工作流、F7 定时任务、F12 EasyExcel、F13 MinIO、F19 Sa-Token | 5 周 | 08 后端 Phase 0+1（登录可用） | P0 |
+| Phase 0 | 自动化基建 | F21 CI/CD、F22 SonarQube、F24 Ansible | 2 周 | 私有仓库 cems-replica 建成（已完成） | P0 |
+| Phase 1 | P0 安全与断环+地基 | F2 数据权限、F3 工作流、F7 定时任务、F12 EasyExcel、F13 MinIO、F19 Sa-Token、F25 Apifox、F27 Selenium | 6 周 | 08 后端 Phase 0+1；Phase 0 流水线可用 | P0 |
 | Phase 2 | 开发效率 | F1 代码生成器 | 2 周 | 后端框架搭好 | P0 |
-| Phase 3 | 数据可视化+文档 | F5 报表设计器、F6 大屏设计器、F11 在线预览、F15 全文检索 | 4 周 | 后端有数据接口；F13 MinIO 上线 | P1 |
-| Phase 4 | 体验补齐 | F4 Online 表单、F8 日志增强、F9 消息中心、F16 甘特图、F20 移动端H5 | 5 周 | F3 工作流上线 | P1 |
-| Phase 5 | 架构预留+集成 | F10 多租户预留、F14 SSO、F17 IoT 监控、F18 DataX 同步 | 随 08 / 按需 | 08 数据库设计；F7 任务控制台 | P2 |
+| Phase 3 | 数据可视化+文档+可观测 | F5 报表、F6 大屏、F11 预览、F15 全文检索、F23 监控告警、F29 日志集中 | 5 周 | F13 MinIO 上线 | P1 |
+| Phase 4 | 体验补齐+压测 | F4 Online 表单、F8 日志增强、F9 消息中心、F16 甘特图、F20 移动端H5、F30 JMeter | 6 周 | F3 工作流上线 | P1 |
+| Phase 5 | 架构预留+集成 | F10 多租户、F14 SSO、F17 IoT、F18 DataX、F28 自动备份、F26 RPA | 随 08 / 按需 | 08 数据库设计；F7 任务控制台 | P2 |
 
-**总周期**：约 16 周，与 08 后端开发并行穿插，不单独占整段工期。
+**总周期**：约 19 周，与 08 后端开发并行穿插，不单独占整段工期。
 
-**关键路径**：08 后端 Phase 0+1（1 周）→ Phase 1（5 周）→ Phase 4（5 周）。F1/F5/F6/F11 可与 Phase 1 并行。
+**关键路径**：Phase 0（2 周）→ 08 后端 Phase 0+1（1 周）→ Phase 1（6 周）→ Phase 4（6 周）。
 
-**第二批定位**：F12/F13/F19 是地基型，随 08 后端一起做；F11/F15 是体验加分项；F16/F17 是项目/设备模块的差异化亮点；F14/F18/F20 按需排期。
+**第三批定位**：F21/F22/F24 是自动化地基，最先做，后续所有阶段都跑在流水线上；F25/F27/F30 是测试左移；F23/F29 补 06 点名的可观测性；F28/F26 是运维与业务自动化。
 
 ## 4. 分阶段详细任务
 
-### Phase 1：P0 安全与断环+地基（5 周）
+### Phase 0：自动化基建（2 周，与 08 同步启动）
+
+**F21 CI/CD（1 周）**
+- [] 私有仓库 cems-replica 配 GitHub Actions workflow（`.github/workflows/ci.yml`）
+- [] 流水线：push → `pnpm lint` + `typecheck` + `build` → 部署 staging → 冒烟（首页 200、主 chunk 200）→ 人工确认 → 调 `cems-deploy.sh` 切生产
+- [] 后端仓库同样配：`mvn verify` → 单元测试 → 构建镜像 → 部署测试环境
+- [] 验收：push 代码后 10 分钟内 staging 可验证，生产发布一键+可回滚
+
+**F22 SonarQube（3 天，与 F21 并行）**
+- [] Docker 部署 SonarQube 社区版（9000 端口），配 PostgreSQL
+- [] CI 加扫描步骤，Quality Gate：新增代码 Bug=0、漏洞=0、重复率<3%
+- [] 验收：故意提交一段有 Bug 的代码，流水线在 sonar 阶段失败
+
+**F24 Ansible（3 天，与 F21 并行）**
+- [] 控制节点装 Ansible，Inventory 纳入 134 服务器（应用/数据/文件各分组）
+- [] Playbook：`deploy-app.yml`（拉代码→构建→staging→切换）、`restart.yml`、`update-config.yml`
+- [] 验收：一条命令完成应用部署，不再手工 SSH
+
+### Phase 1：P0 安全与断环+地基（6 周）
 
 **F2 数据权限（2 周）**
 - [] 后端：`@DataScope` 注解 + AOP 切面，支持 `dept` / `deptAndChild` / `self` 三档
@@ -184,6 +263,19 @@
 - [] 功能：登录会话管理、记住我（7 天）、同账号并发登录控制、管理员踢人下线
 - [] 验收：注解鉴权生效；后台可查看在线会话并强制下线
 
+**F25 Apifox（随 08 后端接口，持续）**
+- [] Apifox 建 CEMS 项目，08 每个模块接口先写文档再开发
+- [] 文档自动生成 Mock，前端并行开发不用等后端
+- [] 每个接口沉淀 3 类用例：参数正确/参数错误/边界值
+- [] CI 每晚定时跑全量用例，失败告警
+- [] 验收：437 个接口文档齐全；每晚回归自动跑
+
+**F27 Selenium（1 周，与 F19 并行）**
+- [] 录制核心 20 页面：登录、项目列表/详情、合同列表/审批、薪资核算、报表页
+- [] Selenium Grid + Chrome headless，CI 每晚并行跑
+- [] 失败自动截图 + 钉钉告警
+- [] 验收：发版前回归从 2 人天降到 30 分钟无人值守
+
 ### Phase 2：开发效率（2 周）
 
 **F1 代码生成器**
@@ -192,7 +284,7 @@
 - [] 前端：代码生成控制台（导入表→配置列→预览→生成）
 - [] 验收：新建一张测试表，生成后前后端零改动跑通 CRUD
 
-### Phase 3：数据可视化+文档（4 周）
+### Phase 3：数据可视化+文档+可观测（5 周）
 
 **F5 JimuReport（2 周）**
 - [] 后端：引入 `jimureport-spring-boot-starter`（JeecgBoot 官方 starter，开箱即用）
@@ -218,7 +310,22 @@
 - [] 前端：顶部搜索框升级，支持全文搜 + 历史记录
 - [] 验收：搜"付款比例"能定位到合同正文条款并高亮
 
-### Phase 4：体验补齐（5 周）
+**F23 监控告警（1 周，与 F15 并行）**
+- [] Docker 部署 Prometheus + Grafana + Node Exporter + Alertmanager
+- [] Spring Boot 加 Actuator + Micrometer Prometheus 端点
+- [] Grafana 大盘：JVM、接口 QPS/P99、MySQL 连接池、磁盘/内存
+- [] 告警规则：接口错误率>1%（5min）、P99>2s、磁盘>85%、服务 down
+- [] 告警通道：企微群机器人 + 邮件
+- [] 验收：kill 掉后端进程，5 分钟内收到告警
+
+**F29 日志集中（3 天，与 F23 并行）**
+- [] Docker 部署 Loki，Promtail 收集 Spring Boot + Nginx 日志
+- [] Grafana 配 Loki 数据源，错误日志一键查
+- [] 前端加 `/api/log/error` 上报接口，JS 异常自动上报 → Loki
+- [] 告警：5 分钟内 ERROR 日志 >50 条则告警
+- [] 验收：Grafana 里能按 traceId 串起前后端日志
+
+### Phase 4：体验补齐+压测（6 周）
 
 **F9 统一消息中心（2 周，先做，被 F3 依赖触发）**
 - [] 后端：消息表（站内信）+ WebSocket 推送（复用芋道的 Spring WebSocket 模式）
@@ -251,6 +358,12 @@
 - [] 部署：H5 发到现有服务器 Nginx，`/m` 路径
 - [] 验收：手机浏览器打开可用；二期再套壳发 App/小程序
 
+**F30 JMeter 压测（每个 Phase 末，持续）**
+- [] 压测脚本入仓库（`perf/` 目录）：登录、项目列表查询、合同审批提交三个场景
+- [] 08 每个 Phase 结束跑一轮：100 并发 / 500 并发两档
+- [] CI 定时每周跑，性能退化超 20% 自动告警并阻塞发布
+- [] 验收：给出系统容量基线（多少并发下 P99 < 1s）
+
 ### Phase 5：架构预留+集成（随 08 / 按需）
 
 **F10 多租户字段预留**
@@ -275,6 +388,18 @@
 - [] 同步状态接入任务控制台，失败告警
 - [] 验收：招标数据自动同步，出错有日志有告警
 
+**F28 自动备份（1 周，随 08 上线）**
+- [] cron：每周日 3 点 XtraBackup 全量，周一至六增量
+- [] 备份文件自动同步到 MinIO（异地），保留 38 天
+- [] 每月第一个周日做恢复演练（备库恢复验证），结果入任务日志
+- [] 失败企微告警
+- [] 验收：模拟删库，能从备份恢复；演练有记录
+
+**F26 RPA（按需，2 周）**
+- [] 场景 1：发票自动录入（RapidOCR 识别 → 影刀填表 → CEMS 发票模块）
+- [] 场景 2：日报表自动推送（多系统取数 → EasyExcel 生成 → 邮件/企微）
+- [] 验收：原来 2 小时的人工活，RPA 10 分钟跑完，准确率 100%
+
 ## 5. 风险与依赖
 
 | 风险 | 影响 | 缓解 |
@@ -285,6 +410,9 @@
 | ES 资源占用高 | F15 增加服务器成本 | 先单节点 + 3 类数据，二期再扩；数据量小可先用 MySQL 全文索引过渡 |
 | kkFileView 中文乱码 | F11 预览体验差 | Linux 部署时装中文字体（Noto Sans CJK），见 kkFileView 官方文档 |
 | 08 后端延期 | 全计划顺延 | Phase 1 的前置是 08 Phase 0+1（1 周），这是关键路径 |
+| Selenium 脚本脆弱 | 页面一改就挂 | 用 data-testid 定位，不用 xpath；失败截图快速定位 |
+| 压测打挂生产 | 影响业务 | 压测只在 staging 跑，生产压测需凌晨+限流 |
+| 监控告警风暴 | 半夜被吵醒 | 告警分级（P0 电话/P1 IM/P2 邮件），收敛规则去重 |
 
 ## 6. 验收标准（汇总）
 
@@ -311,3 +439,15 @@
 - [] 招标数据自动同步，出错有告警（F18）
 - [] 后台可查看在线会话并强制下线（F19）
 - [] 手机可审批、打卡、收消息（F20）
+
+**第三批·自动化（F21–F30）**
+- [] push 代码 10 分钟内 staging 可验证，生产一键发布可回滚（F21）
+- [] 有 Bug 的代码合并不进主分支（F22）
+- [] 服务挂了 5 分钟内收到告警（F23）
+- [] 一条命令完成多机部署，不再手工 SSH（F24）
+- [] 437 个接口文档齐全，每晚回归自动跑（F25）
+- [] 发票录入从 2 小时人工降到 10 分钟 RPA（F26）
+- [] 发版回归从 2 人天降到 30 分钟无人值守（F27）
+- [] 模拟删库能从备份恢复，演练有记录（F28）
+- [] Grafana 里按 traceId 串起前后端日志（F29）
+- [] 给出系统容量基线，性能退化自动阻塞发布（F30）
