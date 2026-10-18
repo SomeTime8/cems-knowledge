@@ -26,7 +26,9 @@ export default defineConfig({
           { text: '08 后端复刻实施方案', link: '/cems/08-backend-plan' },
           { text: '09 业务分析与行业对标', link: '/cems/09-business-analysis' },
           { text: '10 表单字段级业务分析', link: '/cems/10-form-field-analysis' },
-          { text: '11 BPMN 入门（外部资料）', link: '/cems/11-bpmn-primer' }
+          { text: '11 BPMN 入门（外部资料）', link: '/cems/11-bpmn-primer' },
+          { text: '12 深层打磨建议', link: '/cems/12-deep-polish-recommendations' },
+          { text: '13 项目实施计划', link: '/cems/13-implementation-plan' }
         ]
       }
     ],
