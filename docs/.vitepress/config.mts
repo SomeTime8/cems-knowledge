@@ -30,7 +30,7 @@ export default defineConfig({
           { text: '12 深层打磨建议', link: '/cems/12-deep-polish-recommendations' },
           { text: '13 项目实施计划', link: '/cems/13-implementation-plan' },
           { text: '14 复刻站工程说明', link: '/cems/14-replica-project' },
-          { text: '15 开发改进计划', link: '/cems/15-improvement-plan' }
+          { text: '15 开发改进计划', link: '/cems/15-improvement-plan' },
           { text: '16 项目推进操作手册', link: '/cems/16-ops-manual' }
         ]
       }
