@@ -37,7 +37,7 @@ Chrome ──PAC 判断──┬─ 命中名单 ─→ gost 127.0.0.1:1082 ─f
 
 ## 3. 分流逻辑
 
-- **PAC 名单**（`C:\Users\Administrator\proxy.pac`）：GitHub 全家（github.com、api.github.com、githubusercontent.com、githubassets.com、github.io）、Google 全家（google.com、googleapis.com、gstatic.com、googleusercontent.com、gmail.com、googlevideo.com 等）、YouTube（youtube.com、youtu.be、ytimg.com 等）、TikTok（tiktok.com、tiktokcdn.com、tiktokv.com 等）。子域名按后缀匹配。名单外的域名一律 `DIRECT`。
+- **PAC 名单**（`C:\Users\Administrator\proxy.pac`）：GitHub 全家（github.com、api.github.com、githubusercontent.com、githubassets.com、github.io）、Google 全家（google.com、googleapis.com、gstatic.com、googleusercontent.com、gmail.com、googlevideo.com 等，**含区域域名 google.com.hk、google.com.tw、google.co.jp、google.com.sg 与短链 g.co**）、YouTube（youtube.com、youtu.be、ytimg.com 等）、TikTok（tiktok.com、tiktokcdn.com、tiktokv.com 等）。子域名按后缀匹配。名单外的域名一律 `DIRECT`。
   - 注意必须带上各家的 **CDN / 视频流 / 登录子域**，否则会出现"页面能开、视频播不了、登录失败"。
 - **命中后**返回 `SOCKS5 127.0.0.1:1082; SOCKS5 127.0.0.1:1080`：先经 gost 调度（东京优先），gost 本身或东京链路不可用时，Chrome 按 PAC 第二顺位自动改走硅谷隧道。
 - gost 配置（`C:\Users\Administrator\gost\gost.yaml`）：一个 hop 内放 tokyo、siliconvalley 两个 node，selector 策略 `fifo`（首选节点可用时恒用首选，故障才切换）。**不要用命令行双 `-F`**，那是多跳链，不是二选一（见 §6-8）。
@@ -73,7 +73,8 @@ Chrome ──PAC 判断──┬─ 命中名单 ─→ gost 127.0.0.1:1082 ─f
 6. **gost 双 `-F` 是多跳链**：`-F A -F B` 表示"经 A 再经 B"，第二个地址会被当成从 A 的落点去连（127.0.0.1 指向 A 所在机器）必然不通。双出口要用 YAML：一个 hop、多个 node + selector 策略。
 7. **gost 内部故障切换别全指望**：fifo + maxFails 配置下实测未在请求内自动切换，最终靠 PAC 第二顺位实现浏览器级兜底——分层冗余比单点机制可靠。
 8. **无头 Chrome 在该机不可用**：`--headless --dump-dom` 对任何页面都返回空，验证只能走真实 GUI（截图比对）或 curl + netstat，别在无头上浪费时间。
-9. **云电脑侧连 xhcom 的通道**：SSH 须经尾网代理（`ProxyCommand` 走 `<出口代理>`），windows-mcp 须经同一隧道代理访问 8000 端口；代理凭证会轮换，407 时从当前环境重取。
+9. **区域域名跳转漏名单（2026-10-20 15:40 实测）**：google.com 对中国用户 302 跳转到 `www.google.com.hk`，.hk 不在名单里就会直连硬闯、12 秒超时，表现为"Google 难打开"而 YouTube 等一切正常。凡是会按地区跳转的站点，区域域名必须一并进名单；排查口诀：先 `curl -I` 看跳转目标在不在名单，再谈速度。
+10. **云电脑侧连 xhcom 的通道**：SSH 须经尾网代理（`ProxyCommand` 走 `<出口代理>`），windows-mcp 须经同一隧道代理访问 8000 端口；代理凭证会轮换，407 时从当前环境重取。
 
 ## 7. 运维速查
 
