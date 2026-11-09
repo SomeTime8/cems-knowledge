@@ -10,7 +10,8 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: 'CEMS', link: '/cems/01-overview' }
+      { text: 'CEMS', link: '/cems/01-overview' },
+      { text: '自在朋友抖音运营', link: '/zizai-douyin/' }
     ],
     sidebar: [
       {
@@ -33,6 +34,19 @@ export default defineConfig({
           { text: '15 开发改进计划', link: '/cems/15-improvement-plan' },
           { text: '16 项目推进操作手册', link: '/cems/16-ops-manual' },
           { text: '17 浏览器双出口分流', link: '/cems/17-browser-dual-exit' }
+        ]
+      },
+      {
+        text: '自在朋友抖音运营',
+        items: [
+          { text: '专区首页', link: '/zizai-douyin/' },
+          { text: '01 运营日记 · 2026-11-08', link: '/zizai-douyin/01-diary-2026-11-08' },
+          { text: '02 运营日记 · 2026-11-09', link: '/zizai-douyin/02-diary-2026-11-09' },
+          { text: '03 价格口径与平台红线', link: '/zizai-douyin/03-price-and-redlines' },
+          { text: '04 作品数据结论（92 条全量盘点）', link: '/zizai-douyin/04-works-data-findings' },
+          { text: '05 视频制作规格（时长 / 卡点 / 钩子）', link: '/zizai-douyin/05-video-production-spec' },
+          { text: '06 自动代发事件复盘', link: '/zizai-douyin/06-auto-post-incident' },
+          { text: '07 运营打法与排期', link: '/zizai-douyin/07-playbook-and-schedule' }
         ]
       }
     ],
