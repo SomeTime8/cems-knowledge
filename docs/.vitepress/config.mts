@@ -33,7 +33,10 @@ export default defineConfig({
           { text: '14 复刻站工程说明', link: '/cems/14-replica-project' },
           { text: '15 开发改进计划', link: '/cems/15-improvement-plan' },
           { text: '16 项目推进操作手册', link: '/cems/16-ops-manual' },
-          { text: '17 浏览器双出口分流', link: '/cems/17-browser-dual-exit' }
+          { text: '17 浏览器双出口分流', link: '/cems/17-browser-dual-exit' },
+          { text: '18 复刻进度总账与验收体系', link: '/cems/18-progress-and-verification' },
+          { text: '19 群杰智能印章对接', link: '/cems/19-qunjie-integration' },
+          { text: '20 待定夺总表', link: '/cems/20-pending-decisions' }
         ]
       },
       {
